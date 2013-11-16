@@ -17,8 +17,8 @@ describe('functionToString', function () {
 
       });
 
-      it.only('has the expected parameters', function () {
-        assert.deepEqual(this.testCase.params, this.actualInfo.parameters);
+      it('has the expected parameters', function () {
+        assert.deepEqual(this.testCase.params, this.actualInfo.params);
       });
 
       it('has the expected body', function () {
