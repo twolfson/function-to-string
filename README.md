@@ -2,19 +2,64 @@
 
 Extract parameters and body of a function into strings
 
+This was built as part of the [gifsockets][] project to pass arbitrary canvas commands with a callback to a [rgba generating PhantomJS server][].
+
+[gifsockets]: https://github.com/twolfson/gifsockets-server
+[rgba generating PhantomJS server]: https://github.com/twolfson/phantomjs-pixel-server
+
 ## Getting Started
 Install the module with: `npm install function-to-string`
 
 ```javascript
-var function_to_string = require('function-to-string');
-function_to_string.awesome(); // "awesome"
+var functionToString = require('function-to-string');
+functionToString(function hello(world) {
+  // This is a comment
+  return 'some text';
+});
+
+// Returns:
+{
+  name: 'hello',
+  params: ['world'],
+  body: '\n  // This is a comment\n  return \'some text\';\n'
+}
 ```
 
 ## Documentation
-_(Coming soon)_
+We chose to use [esprima][] over [regular expression][] magic. If you are interested in the regular expression route, checkout [AngularJS' source code][]
 
-## Examples
-_(Coming soon)_
+[esprima]: http://esprima.org/
+[regular expression]: http://en.wikipedia.org/wiki/Regular_expression
+[AngularJS' source code]: https://github.com/angular/angular.js/blob/61943276f026e632dccae6405a05f79d486ed898/src/auto/injector.js#L33-L74
+
+`functionToString` exposes a single function
+
+```
+functionToString(fn)
+/**
+ * Parses function into AST, extracts parameters and body, and returns information
+ * @param {Function} fn Function to parse
+ * @returns {Object} retObj
+ * @returns {String} retObj.name Name of `fn`
+ * @returns {String[]} retObj.params Array of parameters for `fn`
+ * @returns {String} retObj.body Content of `fn`
+*/
+```
+
+### Reconstructing a function
+Functions can be reconstructed via the [`Function`][] constructor:
+
+[`Function`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+
+```
+var info = {
+  name: 'hello',
+  params: ['world'],
+  body: '\n  // This is a comment\n  return \'some text\';\n'
+};
+var hello = Function.apply({}, info.params.concat([info.body]));
+console.log(hello()); // 'some text'
+```
 
 ## Donating
 Support this project and [others by twolfson][gittip] via [gittip][].
