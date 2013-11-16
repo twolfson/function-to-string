@@ -1,0 +1,46 @@
+{
+  "name": "function-to-string",
+  "description": "Extract parameters and body of a function into strings",
+  "version": "0.1.0",
+  "homepage": "https://github.com/twolfson/function-to-string",
+  "author": {
+    "name": "Todd Wolfson",
+    "email": "todd@twolfson.com",
+    "url": "http://twolfson.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twolfson/function-to-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twolfson/function-to-string/issues"
+  },
+  "licenses": [
+    {
+      "type": "UNLICENSE",
+      "url": "https://github.com/twolfson/function-to-string/blob/master/UNLICENSE"
+    }
+  ],
+  "main": "lib/function-to-string",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.11.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.0"
+  },
+  "keywords": [
+    "function",
+    "string",
+    "extract",
+    "convert",
+    "arguments",
+    "body"
+  ]
+}
