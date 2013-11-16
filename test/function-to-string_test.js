@@ -13,8 +13,8 @@ describe('functionToString', function () {
         this.actualInfo = functionToString(testCase.fn);
       });
 
-      it.skip('has the expected name', function () {
-
+      it('has the expected name', function () {
+        assert.deepEqual(this.testCase.name, this.actualInfo.name);
       });
 
       it('has the expected parameters', function () {
