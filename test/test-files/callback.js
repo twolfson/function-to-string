@@ -6,6 +6,8 @@ exports.fn = function callback (info, cb) {
 exports.name = 'callback';
 exports.params = ['info', 'cb'];
 exports.body = [
+"",
 "  var hello = 'world';",
-"  cb(null, hello);"
+"  cb(null, hello);",
+""
 ].join('\n');

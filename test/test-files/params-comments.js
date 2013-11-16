@@ -5,5 +5,7 @@ exports.fn = function paramsComments (/* Number */ data) {
 exports.name = 'paramsComments';
 exports.params = ['data'];
 exports.body = [
-"  return data;"
+"",
+"  return data;",
+""
 ].join('\n');

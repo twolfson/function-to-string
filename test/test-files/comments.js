@@ -6,6 +6,8 @@ exports.fn = function comments (data) {
 exports.name = 'comments';
 exports.params = ['data'];
 exports.body = [
+"",
 "  // This is a comment",
-"  return data;"
+"  return data;",
+""
 ].join('\n');
