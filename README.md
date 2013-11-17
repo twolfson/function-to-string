@@ -43,7 +43,7 @@ functionToString(fn)
  * @returns {String} retObj.name Name of `fn`
  * @returns {String[]} retObj.params Array of parameters for `fn`
  * @returns {String} retObj.body Content of `fn`
-*/
+ */
 ```
 
 ### Reconstructing a function
