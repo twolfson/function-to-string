@@ -38,7 +38,7 @@ We chose to use [esprima][] over [regular expression][] magic. If you are intere
 functionToString(fn)
 /**
  * Parses function into AST, extracts parameters and body, and returns information
- * @param {Function} fn Function to parse
+ * @param {Function|String} fn Function/Source code of function to parse
  * @returns {Object} retObj
  * @returns {String} retObj.name Name of `fn`
  * @returns {String[]} retObj.params Array of parameters for `fn`
@@ -59,6 +59,22 @@ var info = {
 };
 var hello = Function.apply({}, info.params.concat([info.body]));
 console.log(hello()); // 'some text'
+```
+
+## Examples
+`functionToString` accepts function source code as well
+
+```js
+// Equivalent to `var fn = (function (hello){return 'world';}).toString()`
+var fn = 'function (hello){return \'world\';}';
+functionToString(hello);
+
+// Returns:
+{
+  name: '',
+  params: ['hello'],
+  body: 'return \'world\';'
+}
 ```
 
 ## Donating
