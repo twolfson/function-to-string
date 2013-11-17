@@ -1,5 +1,5 @@
 exports.fn = function(){};
 
-exports.name = null;
+exports.name = '';
 exports.params = [];
 exports.body = '';
