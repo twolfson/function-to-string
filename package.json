@@ -1,7 +1,7 @@
 {
   "name": "function-to-string",
   "description": "Extract parameters and body of a function into strings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/twolfson/function-to-string",
   "author": {
     "name": "Todd Wolfson",
