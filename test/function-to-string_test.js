@@ -1,6 +1,6 @@
 var assert = require('assert');
 var glob = require('glob');
-var testFiles = glob.sync(__dirname + '/test-files/**/fn-string.js');
+var testFiles = glob.sync(__dirname + '/test-files/**/*.js');
 var functionToString = require('../');
 
 describe('functionToString', function () {
